@@ -16,3 +16,6 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+!/storage/app/public
+/tests
+/phpunit.xml
