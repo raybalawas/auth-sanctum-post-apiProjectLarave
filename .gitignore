@@ -8,7 +8,7 @@
 .env
 .env.backup
 .env.production
-Homestead.json
+Homestead.json 
 Homestead.yaml
 auth.json
 npm-debug.log
