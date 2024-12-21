@@ -110,4 +110,25 @@ class PostController extends BaseController
         $post->delete();
         return $this->sendResponse($post, 'Post deleted successfully!');
     }
+
+    public function destroyAll()
+    {
+        $posts = Post::all();
+
+        foreach ($posts as $post) {
+            $imagePath = public_path('postImgs/') . $post->image;
+
+            if (file_exists($imagePath) && $post->image) {
+                unlink($imagePath);
+            }
+
+            $post->delete();
+        }
+
+        return response()->json([
+            'status' => true,
+            'message' => 'All posts have been deleted successfully!'
+        ], 200);
+    }
+
 }
